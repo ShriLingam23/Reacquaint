@@ -89,8 +89,8 @@ public class BatchConfig {
         return new StepBuilder("csv-step", jobRepository)
                 .<Invoice, Invoice>chunk(2, transactionManager)
                 .reader(reader())
-                .processor(processor())
-                .writer(writer())
+                .processor(processor()) // default interface passed in
+                .writer(writer()) // default interface passed in
                 .build();
     }
 
